@@ -1,0 +1,20 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: build
+    pull: if-not-exists
+    image: xiaoqidun/goenv
+    commands:
+      - CGO_ENABLED=0 go build -o gocos -trimpath -ldflags '-s -w' gocos.go
+  - name: docker
+    pull: if-not-exists
+    image: plugins/docker
+    settings:
+      repo: xiaoqidun/gocos
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      dockerfile: Dockerfile
