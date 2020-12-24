@@ -1,5 +1,5 @@
-# gocos
-腾讯云对象存储，Drone CI插件
+# GoCOS
+腾讯云对象存储(COS)，Drone CI插件
 
 # Drone CI配置例子
 ```yml
