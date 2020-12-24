@@ -24,16 +24,16 @@ steps:
 
 # Drone CI配置说明
 ### secret_id
-腾讯云API密钥管理处获得的SecretId
+API密钥管理获得的SecretId
 
 ### secret_key
-腾讯云API密钥管理处获得的SecretKey
+API密钥管理获得的SecretKey
 
 ### bucket_url
 存储桶概览中的访问域名
 
 ### source
-文件的源位置
+DroneCI中文件的源位置
 
 ### target
 存储桶中文件的目标位置
