@@ -11,6 +11,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	_ "time/tzdata"
 )
 
 const (
