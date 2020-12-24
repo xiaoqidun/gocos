@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"errors"
 	"github.com/tencentyun/cos-go-sdk-v5"
 	"io/fs"
 	"log"
@@ -13,7 +14,6 @@ import (
 )
 
 const (
-	CodeErr       = 1
 	SecretID      = "secret_id"
 	SecretKey     = "secret_key"
 	BucketURL     = "bucket_url"
@@ -22,6 +22,11 @@ const (
 	StripPrefix   = "strip_prefix"
 	PathSeparator = "/"
 )
+
+func ErrExit(err error) {
+	log.Println(err.Error())
+	os.Exit(1)
+}
 
 func GetConfig(key string) string {
 	key = "PLUGIN_" + strings.ToUpper(key)
@@ -59,8 +64,7 @@ func main() {
 		stripPrefix = GetConfig(StripPrefix)
 	)
 	if !VarIsEmpty(secretID, secretKey, bucketURL, source, target) {
-		os.Exit(CodeErr)
-		return
+		ErrExit(errors.New("input error"))
 	}
 	sourceFiles := make([]string, 0, 0)
 	if err = filepath.WalkDir(source, func(path string, d fs.DirEntry, err error) error {
@@ -69,8 +73,7 @@ func main() {
 		}
 		return nil
 	}); err != nil {
-		os.Exit(CodeErr)
-		return
+		ErrExit(err)
 	}
 	sourceLen := len(sourceFiles)
 	if sourceLen == 0 {
@@ -81,8 +84,7 @@ func main() {
 	}
 	u, err := url.Parse(bucketURL)
 	if err != nil {
-		os.Exit(CodeErr)
-		return
+		ErrExit(err)
 	}
 	cosClient := cos.NewClient(
 		&cos.BaseURL{
@@ -105,8 +107,7 @@ func main() {
 			ACLHeaderOptions:       &cos.ACLHeaderOptions{},
 			ObjectPutHeaderOptions: &cos.ObjectPutHeaderOptions{},
 		}); err != nil {
-			os.Exit(CodeErr)
-			return
+			ErrExit(err)
 		}
 		log.Printf("source:%s target:%s\r\n", local, remote)
 	}
