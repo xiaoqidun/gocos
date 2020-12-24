@@ -63,7 +63,7 @@ func main() {
 		target      = GetConfig(Target)
 		stripPrefix = GetConfig(StripPrefix)
 	)
-	if !VarIsEmpty(secretID, secretKey, bucketURL, source, target) {
+	if VarIsEmpty(secretID, secretKey, bucketURL, source, target) {
 		ErrExit(errors.New("input error"))
 	}
 	sourceFiles := make([]string, 0, 0)
