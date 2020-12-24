@@ -21,3 +21,22 @@ steps:
     target: build/release
     strip_prefix: build/release
 ```
+
+# Drone CI配置说明
+## secret_id
+腾讯云API密钥管理处获得的SecretId
+
+## secret_key
+腾讯云API密钥管理处获得的SecretKey
+
+## bucket_url
+存储桶概览中的访问域名
+
+## source
+文件的源位置
+
+## target
+存储桶中文件的目标位置
+
+## strip_prefix
+从文件的源位置剔除前缀
