@@ -1,6 +1,6 @@
 # GoCOS
 
-腾讯云对象存储(COS)，Drone CI插件，COS版本的[AWS S3](http://plugins.drone.io/drone-plugins/drone-s3/)
+腾讯云对象存储(COS)，Drone CI插件，[AWS S3](http://plugins.drone.io/drone-plugins/drone-s3/)的COS实现
 
 # Drone CI配置例子
 
