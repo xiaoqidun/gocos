@@ -11,6 +11,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 	_ "time/tzdata"
 )
 
@@ -52,6 +53,14 @@ func VarIsEmpty(a ...interface{}) bool {
 		}
 	}
 	return false
+}
+
+func init() {
+	tz := os.Getenv("TZ")
+	if tz == "" {
+		tz = "Asia/Shanghai"
+	}
+	time.Local, _ = time.LoadLocation(tz)
 }
 
 func main() {
