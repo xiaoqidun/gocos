@@ -11,7 +11,7 @@ name: default
 
 steps:
   - name: upload
-    image: xiaoqidun/gocos
+    image: hkccr.ccs.tencentyun.com/xiaoqidun/gocos
     settings:
       secret_id:
         from_secret: secret_id

@@ -5,14 +5,15 @@ name: default
 steps:
   - name: build
     pull: if-not-exists
-    image: xiaoqidun/goenv
+    image: hkccr.ccs.tencentyun.com/xiaoqidun/goenv
     commands:
       - CGO_ENABLED=0 go build -o gocos -trimpath -ldflags '-s -w' gocos.go
   - name: docker
     pull: if-not-exists
     image: plugins/docker
     settings:
-      repo: xiaoqidun/gocos
+      repo: hkccr.ccs.tencentyun.com/xiaoqidun/gocos
+      registry: hkccr.ccs.tencentyun.com
       username:
         from_secret: docker_username
       password:
