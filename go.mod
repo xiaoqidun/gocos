@@ -1,8 +1,8 @@
 module github.com/xiaoqidun/gocos
 
-go 1.17
+go 1.18
 
-require github.com/tencentyun/cos-go-sdk-v5 v0.7.32
+require github.com/tencentyun/cos-go-sdk-v5 v0.7.33
 
 require (
 	github.com/google/go-querystring v1.0.0 // indirect
