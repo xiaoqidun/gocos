@@ -56,11 +56,8 @@ func VarIsEmpty(a ...interface{}) bool {
 }
 
 func init() {
-	tz := os.Getenv("TZ")
-	if tz == "" {
-		tz = "Asia/Shanghai"
-	}
-	time.Local, _ = time.LoadLocation(tz)
+	var cstZone = time.FixedZone("CST", 8*3600) // 东八
+	time.Local = cstZone
 }
 
 func main() {
