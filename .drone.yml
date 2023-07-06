@@ -2,13 +2,27 @@ kind: pipeline
 type: docker
 name: default
 
+node:
+  country: cn
+
 steps:
   - name: build
     pull: if-not-exists
-    image: hkccr.ccs.tencentyun.com/xiaoqidun/goenv
+    image: ccr.ccs.tencentyun.com/xiaoqidun/goenv
     commands:
       - CGO_ENABLED=0 go build -o gocos -trimpath -ldflags '-s -w' gocos.go
-  - name: docker
+  - name: docker-cn
+    pull: if-not-exists
+    image: plugins/docker
+    settings:
+      repo: ccr.ccs.tencentyun.com/xiaoqidun/gocos
+      registry: ccr.ccs.tencentyun.com
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      dockerfile: Dockerfile
+  - name: docker-hk
     pull: if-not-exists
     image: plugins/docker
     settings:
