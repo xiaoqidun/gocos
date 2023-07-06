@@ -3,7 +3,7 @@ type: docker
 name: default
 
 node:
-  country: cn
+  region: cn
 
 steps:
   - name: build
