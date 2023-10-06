@@ -8,7 +8,7 @@ steps:
     pull: if-not-exists
     image: ccr.ccs.tencentyun.com/xiaoqidun/goenv
     commands:
-      - CGO_ENABLED=0 go build -o gocos -trimpath -ldflags '-s -w' gocos.go
+      - CGO_ENABLED=0 go build -o gocos -trimpath -ldflags "-s -w -buildid=" gocos.go
   - name: docker-cn
     pull: if-not-exists
     image: plugins/docker
