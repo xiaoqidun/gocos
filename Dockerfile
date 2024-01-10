@@ -1,5 +1,5 @@
 # 基础镜像
-FROM alpine:3.18.5
+FROM alpine:3.19.0
 
 # 作者信息
 LABEL MAINTAINER="xiaoqidun@gmail.com"
