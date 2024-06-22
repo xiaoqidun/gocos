@@ -2,7 +2,7 @@
 FROM alpine:3.20.1
 
 # 作者信息
-LABEL MAINTAINER="xiaoqidun@gmail.com"
+LABEL authors="xiaoqidun"
 
 # 复制程序
 COPY gocos /bin/gocos
