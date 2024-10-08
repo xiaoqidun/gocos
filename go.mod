@@ -1,8 +1,8 @@
 module github.com/xiaoqidun/gocos
 
-go 1.23.1
+go 1.23.2
 
-require github.com/tencentyun/cos-go-sdk-v5 v0.7.54
+require github.com/tencentyun/cos-go-sdk-v5 v0.7.55
 
 require (
 	github.com/clbanning/mxj v1.8.4 // indirect
