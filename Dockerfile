@@ -8,4 +8,4 @@ LABEL authors="xiaoqidun"
 COPY gocos /bin/gocos
 
 # 启动命令
-ENTRYPOINT /bin/gocos
+ENTRYPOINT ["/bin/gocos"]
