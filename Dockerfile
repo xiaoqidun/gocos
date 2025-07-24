@@ -1,5 +1,5 @@
 # 基础镜像
-FROM alpine:3.22.0
+FROM alpine:3.22.1
 # 作者信息
 LABEL authors="xiaoqidun"
 
