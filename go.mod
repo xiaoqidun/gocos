@@ -1,6 +1,6 @@
 module github.com/xiaoqidun/gocos
 
-go 1.25.2
+go 1.25.3
 
 require github.com/tencentyun/cos-go-sdk-v5 v0.7.70
 
