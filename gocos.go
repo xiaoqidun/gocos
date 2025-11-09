@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"errors"
-	"github.com/tencentyun/cos-go-sdk-v5"
 	"io/fs"
 	"log"
 	"net/http"
@@ -13,6 +12,8 @@ import (
 	"strings"
 	"time"
 	_ "time/tzdata"
+
+	"github.com/tencentyun/cos-go-sdk-v5"
 )
 
 const (
