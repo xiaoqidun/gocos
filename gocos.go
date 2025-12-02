@@ -20,8 +20,8 @@ const (
 	SecretID      = "secret_id"
 	SecretKey     = "secret_key"
 	BucketURL     = "bucket_url"
-	Source        = "source"
-	Target        = "target"
+	SourcePath    = "source_path"
+	TargetPath    = "target_path"
 	StripPrefix   = "strip_prefix"
 	PathSeparator = "/"
 )
@@ -65,8 +65,8 @@ func main() {
 		secretID    = GetConfig(SecretID)
 		secretKey   = GetConfig(SecretKey)
 		bucketURL   = GetConfig(BucketURL)
-		source      = GetConfig(Source)
-		target      = GetConfig(Target)
+		source      = GetConfig(SourcePath)
+		target      = GetConfig(TargetPath)
 		stripPrefix = GetConfig(StripPrefix)
 	)
 	if StrIsEmpty(secretID, secretKey, bucketURL, source, target) {

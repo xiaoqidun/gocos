@@ -19,8 +19,8 @@ steps:
         from_secret: secret_key
       bucket_url:
         from_secret: bucket_url
-      source: build/release
-      target: build/release
+      source_path: build/release
+      target_path: build/release
       strip_prefix: build/release
 ```
 
@@ -38,11 +38,11 @@ API密钥管理获得的SecretKey
 
 存储桶概览中的访问域名
 
-### source
+### source_path
 
 DroneCI中文件的源位置
 
-### target
+### target_path
 
 存储桶中文件的目标位置
 
