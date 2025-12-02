@@ -32,25 +32,20 @@ func ErrExit(err error) {
 }
 
 func GetConfig(key string) string {
-	key = "PLUGIN_" + strings.ToUpper(key)
+	key = strings.ToUpper(key)
+	if val := os.Getenv("INPUT_" + key); val != "" {
+		return val
+	}
+	if val := os.Getenv("PLUGIN_" + key); val != "" {
+		return val
+	}
 	return os.Getenv(key)
 }
 
-func VarIsEmpty(a ...interface{}) bool {
+func StrIsEmpty(a ...string) bool {
 	for _, v := range a {
-		switch v := v.(type) {
-		case string:
-			if "" == v {
-				return true
-			}
-		case []byte:
-			if 0 == len(v) {
-				return true
-			}
-		case []string:
-			if 0 == len(v) {
-				return true
-			}
+		if v == "" {
+			return true
 		}
 	}
 	return false
@@ -74,8 +69,8 @@ func main() {
 		target      = GetConfig(Target)
 		stripPrefix = GetConfig(StripPrefix)
 	)
-	if VarIsEmpty(secretID, secretKey, bucketURL, source, target) {
-		ErrExit(errors.New("input error"))
+	if StrIsEmpty(secretID, secretKey, bucketURL, source, target) {
+		ErrExit(errors.New("missing input parameter"))
 	}
 	sourceFiles := make([]string, 0, 0)
 	if err = filepath.WalkDir(source, func(path string, d fs.DirEntry, err error) error {
