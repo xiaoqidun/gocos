@@ -1,6 +1,6 @@
 # GoCOS
 
-通过CI上传文件到腾讯云对象存储
+通过GitHub/Gitea/Drone CI上传文件到腾讯云对象存储
 
 # Drone CI配置例子
 
