@@ -8,7 +8,7 @@ on: [push, workflow_dispatch]
 
 jobs:
   default:
-    runs-on: cn
+    runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v6
@@ -45,7 +45,7 @@ steps:
       strip_prefix: build/release
 ```
 
-# 配置参数说明
+# 输入参数说明
 
 ### secret_id
 
