@@ -1,5 +1,5 @@
-name: '腾讯云 COS 文件上传'
-description: '将文件上传到腾讯云对象存储 (COS)'
+name: '上传文件到腾讯云对象存储'
+description: '上传文件到腾讯云对象存储'
 author: '肖其顿'
 inputs:
   secret_id:
