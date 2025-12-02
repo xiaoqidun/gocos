@@ -2,7 +2,7 @@
 
 通过Gitea/Drone CI上传文件到腾讯云对象存储
 
-# Drone CI配置例子
+# Drone配置例子
 
 ```yml
 kind: pipeline
@@ -24,7 +24,7 @@ steps:
       strip_prefix: build/release
 ```
 
-# Drone CI配置说明
+# 配置参数说明
 
 ### secret_id
 
