@@ -1,6 +1,6 @@
-name: '上传文件到腾讯云对象存储（肖其顿）'
-description: '上传文件到腾讯云对象存储（肖其顿）'
-author: '肖其顿'
+name: '上传文件到腾讯云对象存储（xiaoqidun）'
+description: '上传文件到腾讯云对象存储（xiaoqidun）'
+author: 'xiaoqidun'
 inputs:
   secret_id:
     description: 'API密钥管理获得的SecretId'
