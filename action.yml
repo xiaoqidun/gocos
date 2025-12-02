@@ -1,5 +1,5 @@
-name: '上传文件到腾讯云对象存储'
-description: '上传文件到腾讯云对象存储'
+name: '上传文件到腾讯云对象存储（肖其顿）'
+description: '上传文件到腾讯云对象存储（肖其顿）'
 author: '肖其顿'
 inputs:
   secret_id:
