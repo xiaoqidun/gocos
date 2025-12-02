@@ -3,8 +3,9 @@
 通过Gitea/Drone CI上传文件到腾讯云对象存储
 
 # Gitea配置例子
+
 ```yaml
-on: [push, workflow_dispatch]
+on: [ push, workflow_dispatch ]
 
 jobs:
   default:
