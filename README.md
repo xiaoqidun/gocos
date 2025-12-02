@@ -16,9 +16,9 @@ jobs:
       - name: upload to cos
         uses: xiaoqidun/gocos@latest
         with:
-          secret_id: ${{ secrets.SECRET_ID }}
-          secret_key: ${{ secrets.SECRET_KEY }}
-          bucket_url: ${{ secrets.BUCKET_URL }}
+          secret_id: ${{ secrets.secret_id }}
+          secret_key: ${{ secrets.secret_key }}
+          bucket_url: ${{ secrets.bucket_url }}
           source_path: build/release
           target_path: build/release
           strip_prefix: build/release
