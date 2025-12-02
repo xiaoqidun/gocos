@@ -23,3 +23,6 @@ inputs:
 runs:
   using: 'docker'
   image: 'docker://ccr.ccs.tencentyun.com/xiaoqidun/gocos:latest'
+branding:
+  icon: 'upload-cloud'
+  color: 'blue'
