@@ -14,7 +14,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v6
       - name: upload to cos
-        uses: xiaoqidun/gocos@latest
+        uses: xiaoqidun/gocos@main
         with:
           secret_id: ${{ secrets.secret_id }}
           secret_key: ${{ secrets.secret_key }}
