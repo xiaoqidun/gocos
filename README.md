@@ -11,7 +11,7 @@ name: default
 
 steps:
   - name: upload
-    image: ccr.ccs.tencentyun.com/xiaoqidun/gocos
+    image: ccr.ccs.tencentyun.com/xiaoqidun/gocos:latest
     settings:
       secret_id:
         from_secret: secret_id
@@ -40,7 +40,7 @@ API密钥管理获得的SecretKey
 
 ### source_path
 
-DroneCI中文件的源位置
+构建环境中文件的源位置
 
 ### target_path
 

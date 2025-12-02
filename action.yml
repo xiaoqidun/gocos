@@ -1,0 +1,25 @@
+name: '腾讯云 COS 文件上传'
+description: '将文件上传到腾讯云对象存储 (COS)'
+author: '肖其顿'
+inputs:
+  secret_id:
+    description: 'API密钥管理获得的SecretId'
+    required: true
+  secret_key:
+    description: 'API密钥管理获得的SecretKey'
+    required: true
+  bucket_url:
+    description: '存储桶概览中的访问域名'
+    required: true
+  source_path:
+    description: '构建环境中文件的源位置'
+    required: true
+  target_path:
+    description: '存储桶中文件的目标位置'
+    required: true
+  strip_prefix:
+    description: '从文件的源位置剔除前缀'
+    required: false
+runs:
+  using: 'docker'
+  image: 'docker://ccr.ccs.tencentyun.com/xiaoqidun/gocos:latest'
