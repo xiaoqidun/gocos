@@ -2,6 +2,27 @@
 
 通过Gitea/Drone CI上传文件到腾讯云对象存储
 
+# Gitea配置例子
+```yaml
+on: [push, workflow_dispatch]
+
+jobs:
+  default:
+    runs-on: cn
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6
+      - name: upload to cos
+        uses: xiaoqidun/gocos@latest
+        with:
+          secret_id: ${{ secrets.SECRET_ID }}
+          secret_key: ${{ secrets.SECRET_KEY }}
+          bucket_url: ${{ secrets.BUCKET_URL }}
+          source_path: build/release
+          target_path: build/release
+          strip_prefix: build/release
+```
+
 # Drone配置例子
 
 ```yml
@@ -10,7 +31,7 @@ type: docker
 name: default
 
 steps:
-  - name: upload
+  - name: upload to cos
     image: ccr.ccs.tencentyun.com/xiaoqidun/gocos:latest
     settings:
       secret_id:
